@@ -1,0 +1,3676 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Script do MathJax no <head> -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <title>Nivelamento - Quimica Nivel 1 - Unidade 1</title>
+
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .titulo-programa {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 50px;
+            color: #003974;
+            font-weight: lighter;
+        }
+
+        .titulo-materia {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 133px;
+            color: #003974;
+            font-weight: lighter;
+        }
+
+        .subtitulo-professor {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 59px;
+            color: #0058B4;
+            font-weight: lighter;
+        }
+
+        .titulo-unidade {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 60px;
+        }
+
+        .titulo-saiba-mais {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 70px;
+        }
+        /* Estilização de Bebas Neue FIM */
+
+
+        /* Estilização de Roboto INICIO */
+        .peso-1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 45px;
+        }
+
+        .texto {
+            font-family: 'Roboto', sans-serif;
+            font-size: 35px;
+        }
+
+        .sub-texto {
+            font-family: 'Roboto', sans-serif;
+            font-size: 25px;
+        }
+
+        .titulo-box {
+            font-family: 'Roboto', sans-serif;
+            font-size: 32px;
+        }
+
+        .fonte {
+            font-family: 'Roboto', sans-serif;
+            font-size: 25px;
+        }
+
+        .citacao {
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+            font-style: italic;
+        }
+        /* Estilização de Roboto FIM */
+
+        /* Navbar styles INICIO */
+        .navbar {
+            background-color: #9F43BE;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            position: -webkit-sticky; /* Para navegadores antigos */
+            position: sticky; /* Para manter no topo durante o scroll */
+            top: 0; /* Faz com que a navbar fique no topo */
+            z-index: 10; /* Garante que o menu fique acima de outros elementos */
+            transition: background-color 0.3s ease; /* Transição suave para o efeito */
+        }
+
+        .navbar .logo img {
+            height: 50px;/* Ajuste conforme necessário */
+            width: auto;
+        }
+
+        .navbar .menu-toggle {
+            cursor: pointer;
+            font-size: 1.5em;
+            display: block;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: none;
+            flex-direction: column;
+            background-color: #9f43be;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            height: auto;
+            border-radius: 5px;
+            z-index: 10; /* Garante que o menu esteja acima de outros elementos */
+        }
+
+        .navbar ul.show {
+            display: flex;
+        }
+
+        .navbar ul li {
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .navbar ul li a:hover {
+            color: #003974; /* Cor ao passar o mouse */
+        }
+        .navbar .menu-toggle i:last-child {
+            display: none; /* Esconde o ícone de fechar inicialmente */
+        }
+        
+
+         /* Navbar styles FIM */
+
+        /* Titulo styles INICIO */
+        .titulo-intro {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .titulo-intro h1 {
+            margin: 0;
+            padding: 15px;
+        }
+        /* Titulo styles FIM */
+
+        /* Estilo da Capa do Livro INICIO*/
+        .capa-livro {
+            position: relative;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden; /* Para evitar que o pseudoelemento saia do container */
+            border-top: 3px solid #003974;
+            border-bottom: 3px solid #003974;
+        }
+
+        .capa-livro::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://res.cloudinary.com/di4ria1pf/image/upload/v1761845452/207385370_m_qovbgr.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.40; /* Controle da opacidade */
+            z-index: -1; /* Coloca o background atrás do conteúdo */
+        }
+
+        
+
+        .capa-livro .conteudo-capa {
+            text-align: center;
+            color: white;
+            padding: 20px; /* Espaço interno para o texto */
+        }
+
+        .capa-livro .titulo-materia {
+            font-size: 80px;
+            font-family: 'Bebas Neue', cursive;
+            margin: 0;
+        }
+
+        .capa-livro .subtitulo-professor {
+            font-size: 40px;
+            font-family: 'Bebas Neue', cursive;
+            margin: 10px 0 0;
+        }
+        /* Estilo da Capa do Livro FIM*/
+
+        /* Barra Superior */
+        .barra-superior {
+            background-color: #015A42; /* Cor verde escuro */
+            width: 100%;
+            padding: 15px 15px;
+            text-align: center;
+            box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+            overflow-x: hidden; /* Previne rolagem horizontal */
+        }
+
+        .barra-superior .titulo-barra {
+            font-family: 'Bebas Neue', cursive;
+            color: #FFF; /* Cor branca */
+            font-size: 50px;
+            font-weight: lighter;
+            margin: 0;
+        }
+
+        /* Conteúdo da Introdução */
+        .introducao {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            overflow-x: hidden; /* Impede rolagem horizontal */
+        }
+        
+        .introducao .titulo-introducao {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 50px;
+            font-weight: lighter;
+            color: #015A42; /* Cor verde */
+            margin: 10px auto 10px auto;
+        }
+
+        .introducao .caixa-texto {
+            width: 100%;
+            background-color: #E2F4EB; /* Verde mais claro */
+            padding: 64px 0;
+        }
+                /* Conteúdo centralizado dentro da faixa */
+        .introducao .conteudo-centralizado {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Parágrafos da introdução */
+        .introducao .conteudo-centralizado p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 19px;
+            line-height: 1.6;
+            text-align: justify;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        /* RESPONSIVIDADE SEÇÕES ACIMA*/
+        /* Capa do Livro - Responsividade */
+        @media (max-width: 768px) {
+            .capa-livro {
+                height: 70vh; /* Reduz a altura da capa */
+            }
+            .capa-livro::before {
+                background-position: center center; /* centraliza melhor no mobile */
+            }
+            .capa-livro .titulo-materia {
+                font-size: 40px; /* Reduz o tamanho do título */
+            }
+
+            .capa-livro .subtitulo-professor {
+                font-size: 24px; /* Reduz o tamanho do subtítulo */
+            }
+            .capa-livro .titulo-programa {
+                font-size: 18px;
+            }
+            .capa-livro .conteudo-capa {
+                padding: 15px; /* Ajusta o padding para telas menores */
+            }
+        }   
+            /* Seção Introdução - Responsividade */
+        @media (max-width: 768px) {
+            .barra-superior {
+                padding: 10px; /* Reduz o padding da barra */
+            }
+
+            .barra-superior .titulo-barra {
+                font-size: 1.6rem;
+                max-width: 800px;
+                margin: 10px 0;
+                padding: 0 30px;
+                text-align: left;
+            }
+
+            .introducao .titulo-introducao {
+                font-size: 2.8rem; /* Reduz o tamanho do título da introdução */
+                margin-top: 20px; /* Ajusta o espaçamento superior */
+            }
+
+            .introducao .caixa-texto {
+                padding: 20px; /* Reduz o padding da caixa de texto */
+                width: 100%; /* Ajusta a largura da caixa */
+            }
+
+            .introducao .caixa-texto p {
+                font-size: 1rem; /* Reduz o tamanho do texto */
+                line-height: 1.4;
+                margin-bottom: 10px; /* Ajusta a margem entre os parágrafos */
+            }
+            .introducao .conteudo-centralizado {
+                max-width: 800px;
+                margin: 10px 0;
+                padding: 0 40px;
+            }
+        }
+        /* Responsividade para o título da seção de Programa */
+        @media (max-width: 768px) {
+            .titulo-programa {
+                font-size: 50px; /* Ajuste do tamanho do título */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .titulo-programa {
+                font-size: 35px; /* Ajuste para telas muito pequenas */
+            }
+        }
+
+        /* Estilo base da seção */
+        .secao1 .conteudo-secao {
+            width: 100% !important;
+            padding: 64px 0 !important; /* padding vertical conforme solicitado */
+            box-sizing: border-box !important;
+        }
+        .secao1 .acordeon-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .secao1 .tabs-section {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        /* Estilo base da seção */
+        .secao1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #9f43be11;
+            padding: 20px;
+        }
+        .secao1 .outer-container-alt {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+       }
+        /* Imagem de topo */
+        .secao1 .imagem-topo {
+            width: 100%;
+            height: auto;
+            max-height: 290px; /* ajuste essa altura conforme necessário */
+            object-fit: cover; /* garante que a imagem preencha sem distorcer */
+            display: block;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF;
+        }
+
+        /* Faixa verde */
+        .secao1 .faixa-verde {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .secao1 .faixa-verde .titulo-secao {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #015A42; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        .secao1 .titulo-verde {
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+            color: #015A42; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        /* Parágrafo padrão */
+        .secao1 p {
+            font-size: 19px;
+            text-align: justify;
+            line-height: 1.6;
+            color: #333;
+            margin: 10px auto;
+            width: 90%;
+            max-width: 800px;    
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .secao1 .faixa-verde .titulo-secao {
+                font-size: 20px;
+            }
+
+            .secao1 p {
+                font-size: 1rem;
+            }
+            .secao1 .imagem-topo {
+                max-height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .secao1 .faixa-verde .titulo-secao {
+                font-size: 20px;
+            }
+
+            .secao1 p {
+                font-size: 0.95rem;
+            }
+        }
+        /* Estilo base da seção */
+        .secao2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .secao2 .conteudo-secao {
+            width: 100%;
+            padding: 64px 0;
+            box-sizing: border-box;
+        }
+        .secao2 .acordeon-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 10px auto;
+        }
+       .secao2 .outer-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+       }
+        /* Imagem de topo */
+        .secao2 .imagem-topo {
+            width: 100%;
+            height: auto;
+            max-height: 290px; /* ajuste essa altura conforme necessário */
+            object-fit: cover; /* garante que a imagem preencha sem distorcer */
+            display: block;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF;
+        }
+
+        /* Faixa verde */
+        .secao2 .faixa-verde {
+            width: 100%;
+            background-color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .secao2 .faixa-verde .titulo-secao {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #015A42; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        .secao2 .titulo-verde {
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+            color: #3a95a6; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        /* Parágrafo padrão */
+        .secao2 p {
+            font-size: 19px;
+            font-family: 'Roboto', sans-serif;
+            text-align: justify;
+            line-height: 1.6;
+            color: #333;
+            margin: 10px auto;
+            width: 90%;
+            max-width: 800px;
+                 
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .secao2 .faixa-verde .titulo-secao {
+                font-size: 30px;
+            }
+
+            .secao2 p {
+                font-size: 1rem;
+            }
+            .secao2 .imagem-topo {
+                max-height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .secao2 .faixa-verde .titulo-secao {
+                font-size: 24px;
+            }
+
+            .secao2 p {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* ===== ESTRUTURA DA CAIXA ===== */
+        .caixa-dupla {
+            position: relative;
+            display: inline-block;
+            max-width: 650px;
+            width: 80%;
+        }
+
+        /* Fundo verde atrás */
+        .caixa-dupla::before {
+            content: "";
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 100%;
+            height: 100%;
+            background-color: #015A42;
+            border-radius: 12px;
+            z-index: 0;
+        }
+
+        /* Caixa frontal */
+        .caixa-conteudo {
+            position: relative;
+            background-color: rgba(230, 242, 238, 0.75); /* leve transparência */
+            border: 2px solid #015A42;
+            border-radius: 12px;
+            padding: 32px 40px;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+            z-index: 1;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            transform: translate(3px, 3px); /* deslocamento diagonal */
+        }
+
+        /* ===== VERSÃO DESKTOP (padrão) ===== */
+        @media (min-width: 992px) {
+        .caixa-conteudo {
+            max-width: 600px;
+            padding: 22px 48px;
+            font-size: 1.1rem;
+        }
+
+        .caixa-dupla::before {
+            top: 8px;
+            left: 8px;
+            border-radius: 14px;
+        }
+        }
+
+        /* ===== RESPONSIVO PARA TABLETS ===== */
+        @media (max-width: 768px) {
+        .caixa-conteudo {
+            padding: 16px 28px;
+            font-size: 0.95rem;
+        }
+
+        .caixa-dupla::before {
+            top: 6px;
+            left: 6px;
+        }
+        }
+
+        /* ===== RESPONSIVO PARA CELULARES ===== */
+        @media (max-width: 480px) {
+        .caixa-conteudo {
+            padding: 12px 20px;
+            font-size: 0.9rem;
+        }
+
+        .caixa-dupla::before {
+            top: 4px;
+            left: 4px;
+        }
+        }
+         .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            cursor: grab;
+            overflow: hidden;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* garante que se ajuste à tela inicialmente */
+            transition: transform 0.2s ease;
+            transform-origin: center center;
+        }
+        .lightbox-hint {
+            position: absolute;
+            bottom: 20px;
+            color: #fff;
+            font-size: 14px;
+            opacity: 0.8;
+            font-family: sans-serif;
+            text-align: center;
+            animation: fadeOut 4s forwards; /* some sozinho */
+        }
+        .zoomable {
+            cursor: zoom-in; /* ícone de lupa ao passar o mouse */
+            transition: transform 0.2s ease;
+        }
+
+        .zoomable:hover {
+            transform: scale(1.02); /* leve efeito de destaque no hover */
+        }
+        @keyframes fadeOut {
+            0% { opacity: 0.8; }
+            80% { opacity: 0.8; }
+            100% { opacity: 0; }
+        }
+                /* Animação suave */
+                @keyframes zoomIn {
+                    from { transform: scale(0.7); opacity: 0; }
+                    to { transform: scale(1); opacity: 1; }
+                }
+
+        
+
+     /* Retângulo de fundo */
+        .background-section {
+            background-color: #015A42; /* Cor de fundo verde */
+            border-radius: 20px; /* Bordas arredondadas */
+            min-height: 450px; /* Altura mínima */
+            width: 90%; /* Largura ajustada à estrutura */
+            max-width: 800px; /* Limite máximo */
+            height: auto; /* Altura do retângulo */
+            margin: 0 auto; /* Espaçamento da seção acima e centralização */
+            position: relative; /* Define o contexto de empilhamento */
+        }
+                /* Responsividade - Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .background-section {
+                width: 85%;
+                margin: 50px auto;
+                padding: 20px;
+            }
+        }
+        
+        /* Retângulo transparente (sobreposição) */
+        .transparent-section {
+            background-color: rgba(255, 255, 255, 0.822); /* Tom verde com transparência */
+            border: 2px solid #015A42; /* Borda sólida verde */
+            border-radius: 20px; /* Bordas arredondadas */
+            width: calc(100% - 40px); /* Reduz tamanho para acomodar margens */
+            height: 100%;
+            position: absolute; /* Define posicionamento relativo */
+            top: 20px;
+            left: 20px; 
+            z-index: 1; /* Garante que o retângulo fique sobre o fundo */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+            display: flex; /* Usamos flexbox para alinhar o conteúdo */
+            flex-direction: column; /* Alinha os elementos verticalmente */
+            justify-content: space-evenly; /* Distribui espaço uniformemente */
+            align-items: center; /* Alinha o conteúdo à esquerda */
+            text-align: center; /* Centraliza o texto */
+        }
+        
+        
+                /* Responsividade - Ajuste da largura da transparent-section para telas menores */
+        @media (max-width: 768px) {
+            .transparent-section {
+                width: 90%; /* Diminui a largura da sobreposição */
+                left: 5%; /* Ajusta o posicionamento para centralizar */
+                right: 5%; /* Garante que o elemento ocupe menos espaço na tela */
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+        /* Círculo verde */
+        .circle-green {
+            position: absolute;
+            top: -30px; /* Distância do topo */
+            left: -30px; /* Distância da esquerda */
+            background-color: #015A42; /* Cor verde */
+            border-radius: 50%; /* Para garantir que seja redondo */
+            width: 120px; /* Tamanho do círculo */
+            height: 120px; /* Tamanho do círculo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2; /* Garantir que fique sobre o fundo */
+        }
+
+        /* Círculo branco sobre o verde */
+        .circle-white {
+            position: absolute;
+            top: -4px; /* Eleva o círculo branco para cima */
+            left: -5px; /* Centraliza o círculo branco sobre o verde */
+            background-color: white; /* Cor branca */
+            border-radius: 50%; /* Para garantir que seja redondo */
+            width: 120px; /* Tamanho do círculo branco */
+            height: 120px; /* Tamanho do círculo branco */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3; /* Coloca o círculo branco sobre o verde */
+        }
+
+        /* Estilizando o ícone dentro do círculo branco */
+        .circle-white i {
+            font-size: 80px; /* Tamanho do ícone */
+            color: #015A42; /* Cor verde para o ícone */
+        }
+        /* Responsividade - Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .circle-green, .circle-white {
+                width: 60px; /* Diminui o tamanho */
+                height: 60px; /* Diminui o tamanho */
+                top: -5px; /* Ajusta o posicionamento */
+                left: -5px; /* Ajusta o posicionamento */
+            }
+
+            .circle-white i {
+                font-size: 40px; /* Reduz o ícone */
+            }
+        }
+              /* Retângulo de fundo */
+        .background-section2 {
+            background-color: #015A42 !important;
+            border-radius: 20px !important;
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            position: relative;
+            padding: 30px; /* adiciona espaçamento interno */
+            box-sizing: border-box;
+            height: auto; /* deixa a altura fluir conforme o conteúdo */
+            min-height: unset; /* remove altura mínima fixa */
+        }
+               
+        
+                    /* Retângulo transparente */
+            .transparent-section2 {
+                background-color: rgba(255, 255, 255, 0.9);
+                border: 2px solid #015A42;
+                border-radius: 20px;
+                padding: 20px;
+                width: 100%;
+                box-sizing: border-box;
+                position: relative; /* relativo em vez de absolute */
+                z-index: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 5px; /* espaço natural entre elementos */
+            }
+        
+                @media (max-width: 768px) {
+            .background-section2 {
+                width: 95%;
+                margin: 30px auto;
+                padding: 15px;
+            }
+
+            .transparent-section2 {
+                padding: 15px;
+                gap: 5px;
+            }
+        }
+        
+        /* Círculo verde */
+        .circle-green2 {
+            position: absolute;
+            top: -30px; /* Distância do topo */
+            left: -30px; /* Distância da esquerda */
+            background-color: #015A42; /* Cor verde */
+            border-radius: 50%; /* Para garantir que seja redondo */
+            width: 120px; /* Tamanho do círculo */
+            height: 120px; /* Tamanho do círculo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2; /* Garantir que fique sobre o fundo */
+        }
+
+        /* Círculo branco sobre o verde */
+        .circle-white2 {
+            position: absolute;
+            top: -4px; /* Eleva o círculo branco para cima */
+            left: -5px; /* Centraliza o círculo branco sobre o verde */
+            background-color: white; /* Cor branca */
+            border-radius: 50%; /* Para garantir que seja redondo */
+            width: 120px; /* Tamanho do círculo branco */
+            height: 120px; /* Tamanho do círculo branco */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3; /* Coloca o círculo branco sobre o verde */
+        }
+
+        /* Estilizando o ícone dentro do círculo branco */
+        .circle-white2 i {
+            font-size: 80px; /* Tamanho do ícone */
+            color: #015A42; /* Cor verde para o ícone */
+        }
+        /* Responsividade - Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .circle-green2, .circle-white2 {
+                width: 60px; /* Diminui o tamanho */
+                height: 60px; /* Diminui o tamanho */
+                top: -5px; /* Ajusta o posicionamento */
+                left: -5px; /* Ajusta o posicionamento */
+            }
+
+            .circle-white2 i {
+                font-size: 40px; /* Reduz o ícone */
+            }
+        }
+
+        .learn-more-title {
+            color: #015A42; /* Cor verde */
+            font-size: 50px; /* Tamanho do título */
+            font-weight: lighter;
+            text-align: left;
+            font-family: 'Bebas Neue', sans-serif; /* Fonte Bebas Neue */
+            margin: -25px 0;
+            width: 80%; /* Ocupa toda a largura disponível */
+        }
+        .learn-more-paragraph {
+            font-family: 'Roboto', sans-serif; /* Fonte Roboto */
+            text-align: left;
+            font-size: 17px;
+            line-height: 1.4; /* Espaçamento entre linhas */
+            color: #000; /* Cor verde */
+            margin: 0px; /* Reduz margens */
+            width: 90%; /* Ocupa toda a largura disponível */
+            word-wrap: break-word;
+        }
+         .learn-more-link {
+            font-family: 'Roboto', sans-serif; 
+            text-align: left;
+            font-size: 17px;
+            line-height: 1.4; 
+            color: #FFF; /* cor do texto */
+            margin: 0px; 
+            width: 90%; 
+            word-wrap: break-word;
+            padding: 5px;
+            background-color: #669e87;
+            cursor: pointer; /* mostra a mãozinha ao passar o mouse */
+            text-decoration: none; /* opcional: simula link */
+            transition: background-color 0.3s, color 0.3s; /* efeito ao passar o mouse */
+        }
+
+
+        .centered-paragraph {
+            text-align: center; /* Centraliza o texto horizontalmente */
+            margin: -5px 0; /* Ajusta a margem para uniformidade */
+            font-size: 17px; /* Mantém o tamanho consistente */
+            line-height: 1.4; /* Controla o espaçamento entre linhas */
+        }
+                /* Responsividade - Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .learn-more-title {
+                font-size: 35px; /* Ajusta o tamanho do título */
+                text-align: left;
+            }
+
+            .learn-more-paragraph {
+                font-size: 15px; /* Ajusta o tamanho do texto */
+                line-height: 1.4;
+                text-align: justify; /* Centraliza o texto */
+                margin: 5px 0; /* Reduz margens */
+            }
+        }
+            .outer-background {
+                background-color: #9f43be11; /* Cor de fundo para o contêiner externo */
+        }
+        .play-icon {
+            display: flex; /* Flexbox para centralizar o conteúdo */
+            justify-content: center;
+            align-items: center;
+            background-color: #015A42; /* Fundo verde */
+            color: #FFF; /* Ícone branco */
+            width: 90px; /* Largura do botão */
+            height: 55px; /* Altura do botão */
+            border-radius: 13px;
+            font-size: 40px; /* Tamanho do ícone */
+            cursor: pointer; /* Cursor de clique */
+            transition: transform 0.3s ease; /* Efeito de transição */
+        }
+
+        .play-icon:hover {
+            transform: scale(1.1); /* Aumenta levemente no hover */
+        }
+                /* Responsividade - Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .play-icon {
+                width: 60px; /* Diminui a largura */
+                height: 40px; /* Diminui a altura */
+                font-size: 25px; /* Diminui o tamanho do ícone */
+            }
+        }
+        /* Modal - Oculto por padrão */
+        .video-modal {
+            display: none; /* Inicialmente o modal está oculto */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro transparente */
+            z-index: 1000; /* Garantir que o modal fique acima de outros conteúdos */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Conteúdo do modal (onde ficará o vídeo) */
+        .video-content {
+            position: relative;
+            background-color: #015A42;
+            border-radius: 10px;
+            padding: 20px;
+        }
+         
+        /* Responsividade - Ajustes para dispositivos móveis */
+        @media (max-width: 768px) {
+            .video-content {
+                max-width: 100%; /* Maximize a largura do modal no mobile */
+                padding: 10px;
+            }
+
+            .video-content iframe {
+                width: 100%; /* O iframe ocupará toda a largura disponível */
+                height: 56.25vw; /* Isso mantém a proporção de 16:9 */
+                max-height: 80vh; /* Evita que o vídeo ultrapasse a tela */
+                border-radius: 10px;
+            }
+        }
+
+        /* Botão de fechar */
+        .close-btn {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            font-size: 40px;
+            color: #FFF;
+            cursor: pointer;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+        .close-btn:hover {
+            transform: scale(1.2); /* Aumenta levemente no hover */
+            color: #FF0000; /* Muda a cor para vermelho no hover */
+        }
+                /* Container */
+        .video-play-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        /* Botão circular */
+        .video-play-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(145deg, #017A5A, #015A42); /* Gradiente verde */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            color: #FFF;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            font-size: 55px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        /* Efeito pulsante */
+        .video-play-btn::after {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2px solid rgba(1,90,66,0.6);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.6; }
+            70% { transform: scale(1.3); opacity: 0; }
+            100% { transform: scale(1); opacity: 0; }
+        }
+
+        .video-play-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Texto abaixo */
+        .video-play-text {
+            margin-top: 10px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: #015A42;
+            font-weight: 600;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .video-play-btn {
+                width: 70px;
+                height: 70px;
+                font-size: 35px;
+            }
+
+            .video-play-btn::after {
+                width: 85px;
+                height: 85px;
+            }
+
+            .video-play-text {
+                font-size: 14px;
+            }
+        }
+
+        .link-sim {
+            color: #000;              /* texto preto */
+            text-decoration: none;    /* remove o sublinhado */
+            cursor: pointer;          /* indica que é clicável */
+        }
+
+        .link-sim:hover {
+            text-decoration: underline; /* opcional — mostra sublinhado só ao passar o mouse */
+        }
+
+         .tabs-container {
+            width: 600px;
+        }
+
+        /* Abas */
+        .tab-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto;
+        }
+
+        .tab-button {
+            flex: 1;
+            background-color: #9F43BE;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .tab-button:not(:last-child) {
+            border-right: 2px solid white;
+        }
+
+        .tab-button:hover {
+            background-color: #b95cd5;
+        }
+
+        .tab-button.active {
+            background-color: white;
+            color: #9F43BE;
+            border: 2px solid #9F43BE;
+            font-weight: 700;
+        }
+
+        /* Conteúdo */
+        .tab-content {
+            border: 2px solid #9F43BE;
+            border-radius: 10px;
+            background-color: white;
+            padding: 40px;
+            display: none;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* ===========================
+        🔹 Responsividade adicionada
+        =========================== */
+
+        /* Tablets */
+        @media (max-width: 768px) {
+            .tabs-container {
+                width: 100%;
+                max-width: 500px;
+            }
+
+            .tab-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .tab-button {
+                flex: 1 1 45%;
+                font-size: 14px;
+                padding: 8px 4px;
+                border-radius: 8px;
+            }
+
+            .tab-content {
+                padding: 25px;
+                font-size: 15px;
+            }
+        }
+
+        /* Celulares */
+        @media (max-width: 480px) {
+            .tabs-container {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .tab-buttons {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+            }
+
+            .tab-button {
+                flex: none;
+                width: 100%;
+                font-size: 14px;
+                padding: 10px;
+                border-radius: 8px;
+                border-right: none;
+            }
+
+            .tab-content {
+                padding: 20px;
+                font-size: 14px;
+            }
+        }
+                /* Tema verde exclusivo para esses tabs */
+        .tabs-container.tema-verde {
+            --tab-color-default: #015A42;
+            --tab-color-active: #01332d;
+            --tab-color-hover: #017155;
+            --tab-text-color: #ffffff;
+            --tab-border-color: #015A42;
+        }
+
+        /* Aplica as variáveis apenas dentro do tema */
+        .tabs-container.tema-verde .tab-button {
+            background-color: var(--tab-color-default);
+            color: var(--tab-text-color);
+        }
+
+        .tabs-container.tema-verde .tab-button:hover {
+            background-color: var(--tab-color-hover);
+        }
+
+        .tabs-container.tema-verde .tab-button.active {
+            background-color: white;
+            color: var(--tab-color-default);
+            border-bottom: none;
+                border: 2px solid;
+        }
+
+        .tabs-container.tema-verde .tab-content {
+            border: 2px solid var(--tab-border-color);
+        }
+
+        .slider-texto-container {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            border: 2px solid #3a95a6;
+            padding: 20px 30px;
+            box-sizing: border-box;
+            overflow: hidden;
+            background-color: #FFF;
+            border-radius: 8px;
+        }
+        .slider-texto-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .slide-texto {
+            display: none;
+            flex-shrink: 0;
+            width: 100%;
+            text-align: center;
+            word-break: keep-all;
+            white-space: normal;
+            
+        }
+
+        .slide-texto.ativo {
+            display: block;
+        }
+
+        /* Container de imagens dentro do slide */
+        .slide-imagens {
+            display: flex;
+            flex-direction: column; /* padrão: empilha vertical */
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px; /* espaçamento interno para não colar nas bordas */
+            box-sizing: border-box;
+        }
+                /* Apenas para slides com imagens maiores */
+        .slide-com-imagens-maiores .slider-img {
+            max-width: 400px;  /* aumenta o tamanho */
+            max-height: 400px;
+        }
+                /* Apenas para slides com imagens maiores */
+        .slide-com-tres-imagens .slider-img {
+            max-width: 300px;  /* aumenta o tamanho */
+            max-height: 300px;
+        }
+
+        /* Responsividade: telas menores empilham colunas */
+        @media (max-width: 768px) {
+                        /* Apenas para slides com imagens maiores */
+            .slide-com-imagens-maiores .slider-img {
+                max-width: 200px;  /* aumenta o tamanho */
+                max-height: 200px;
+            }
+                /* Apenas para slides com imagens maiores */
+            .slide-com-tres-imagens .slider-img {
+                max-width: 150px;  /* aumenta o tamanho */
+                max-height: 150px;
+            }
+        }
+
+        /* Apenas slides que possuem colunas */
+        .slide-imagens.colunas {
+            display: flex;
+            flex-direction: row; /* colunas lado a lado */
+            justify-content: center; /* centraliza colunas no slide */
+            gap: 20px; /* espaço entre colunas */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        /* Colunas individuais */
+        .coluna-imagem {
+            display: flex;
+            flex-direction: column; /* empilha imagens dentro da coluna */
+            gap: 10px; /* espaço entre imagens */
+            align-items: center; /* centraliza horizontalmente */
+            justify-content: center; /* centraliza verticalmente dentro da coluna */
+            flex: 1; /* cada coluna ocupa largura proporcional igual */
+        }
+
+        /* Responsividade: telas menores empilham colunas */
+        @media (max-width: 768px) {
+            .slide-imagens.colunas {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        /* Imagens zoomable pequenas */
+        .slider-img {
+            max-width: 250px; /* ajuste o tamanho desejado */
+            max-height: 250px;
+            cursor: pointer; /* indica que pode ser clicada */
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        .slider-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .titulo-texto {
+            color: #b9e5a9;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif;
+            width: 100%;
+        }
+
+        .conteudo-texto {
+            font-size: 16px !important;
+            color: #333 !important;
+            font-family: 'Roboto', sans-serif !important;
+            width: 100%;
+            margin: 0 auto;
+            word-break: normal;
+            white-space: normal;
+            text-align: center !important;
+        }
+        .titulo-texto,
+        .conteudo-texto {
+            word-break: break-word;
+            white-space: normal;
+        }
+        .seta-texto {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: none;
+            font-size: 30px;
+            color: #3a95a6;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .seta-texto.esquerda {
+            left: 0;
+        }
+
+        .seta-texto.direita {
+            right: 0;
+        }
+
+    @media (max-width: 768px) {
+        .titulo-texto {
+            font-size: 20px;
+        }
+
+        .conteudo-texto {
+            font-size: 18px;
+        }
+
+        .seta-texto {
+            font-size: 24px;
+        }
+    }
+        .slider-texto-indicadores {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .dot-texto {
+            height: 12px;
+            width: 12px;
+            margin: 0 6px;
+            background-color: #ccc;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dot-texto.ativo {
+            background-color: #3a95a6;
+        }
+        /* ------------------- */
+        /* TEMAS DE COR        */
+        /* ------------------- */
+
+        /* Tema verde */
+        .tema-verde {
+            border-color: #92d678;
+        }
+        .tema-verdeborda {
+            border-color: #015A42 !important;
+        }
+        .tema-verde .seta-texto {
+            color: #92d678;
+        }
+        .tema-verde .dot-texto.ativo {
+            background-color: #92d678;
+        }
+
+        /* Tema roxo */
+        .tema-roxo {
+            border-color: #015A42;
+        }
+        .tema-roxo .seta-texto {
+            color: #015A42;
+        }
+        .tema-roxo .dot-texto.ativo {
+            background-color: #015A42;
+        }
+
+        /* Tema roxo */
+        .tema-green {
+            border-color: #9F43BE;
+        }
+        .tema-green .seta-texto {
+            color: #9F43BE;
+        }
+        .tema-green .dot-texto.ativo {
+            background-color: #9F43BE;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .seta-texto { font-size: 24px; }
+            .conteudo-texto { font-size: 18px; }
+        }
+
+        /* Acordeon styles */
+        .acordeon-container {
+            margin-top: 20px;
+            width: 90%; /* Ajuste de largura */
+            max-width: 800px; /* Limite máximo */
+        }
+
+        .acordeon {
+            border-radius: 10px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .acordeon-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #3a95a6;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .acordeon-headerb {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #015A42;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .acordeon-headerc {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #9F43BE;
+            color: #FFF;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .acordeon-headerd {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #134969; /* exemplo: laranja suave */
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .acordeon-content {
+            display: none;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            padding-top: 0; /* Remove padding para que o header toque no conteúdo */
+            border: 2px solid #3a95a6;
+            border-radius: 0 0 10px 10px; /* Apenas canto inferior arredondado */
+        }
+
+        .acordeon-contentb {
+            display: none;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            padding-top: 0; /* Remove padding para que o header toque no conteúdo */
+            border: 2px solid #015A42;
+            border-radius: 0 0 10px 10px; /* Apenas canto inferior arredondado */
+        }
+
+        .acordeon-contentc {
+            display: none;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            padding-top: 0; /* Remove padding para que o header toque no conteúdo */
+            border: 2px solid #9F43BE;
+            border-radius: 0 0 10px 10px; /* Apenas canto inferior arredondado */
+        }
+
+        .acordeon-contentd {
+            display: none;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            padding-top: 0; 
+            border: 2px solid #134969; /* mesma cor da header para consistência */
+            border-radius: 0 0 10px 10px; 
+        }
+
+        .acordeon-content p {
+            margin: 20px auto;
+            font-size: 16px;
+        }
+        .acordeon-contentb p {
+            margin: 20px auto;
+            font-size: 16px;
+        }
+        .acordeon-contentc p {
+            margin: 20px auto;
+            font-size: 16px;
+        }
+        .acordeon-contentc h4 {
+            text-align: center;
+
+        }
+        .acordeon-contentd p {
+            margin: 20px auto;
+            font-size: 16px;
+        }
+        .tituloacordeonverde{
+            color: #015A42;
+        }
+            /* Estilo do ícone da seta */
+        .acordeon-icon {
+            font-size: 40px;
+            transition: transform 0.3s ease; /* Para rotação suave */
+        }
+            
+            /* Rotação da seta para cima */
+        .acordeon-header.active .acordeon-icon {
+            transform: rotate(180deg); /* Gira a seta para cima */
+        }
+        /* Rotação da seta para cima */
+        .acordeon-headerb.active .acordeon-icon {
+            transform: rotate(180deg); /* Gira a seta para cima */
+        }
+        /* Rotação da seta para cima */
+        .acordeon-headerc.active .acordeon-icon {
+            transform: rotate(180deg); /* Gira a seta para cima */
+        }
+                /* Ícone giratório */
+        .acordeon-headerd.active .acordeon-icon {
+            transform: rotate(180deg);
+        }
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            .acordeon-header {
+                font-size: 20px; /* Reduzir tamanho do texto */
+                padding: 12px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 30px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-content {
+                font-size: 14px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 10px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-content p {
+                margin: 15px; /* Ajustar margem para menor espaçamento */
+            }
+            .acordeon-headerb {
+                font-size: 20px; /* Reduzir tamanho do texto */
+                padding: 12px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 30px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-contentb {
+                font-size: 14px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 10px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-contentb p {
+                margin: 15px; /* Ajustar margem para menor espaçamento */
+            }
+
+            .acordeon-headerc {
+                font-size: 20px; /* Reduzir tamanho do texto */
+                padding: 12px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 30px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-contentc {
+                font-size: 14px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 10px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-contentc p {
+                margin: 15px; /* Ajustar margem para menor espaçamento */
+            }
+            .acordeon-headerd {
+                font-size: 20px;
+                padding: 12px;
+            }
+
+            .acordeon-contentd {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .acordeon-contentd p {
+                margin: 15px;
+            }
+        }
+        /* Responsividade para telas menores ainda (480px) */
+        @media (max-width: 480px) {
+            .acordeon-header {
+                font-size: 16px; /* Reduz ainda mais o tamanho do texto */
+                padding: 10px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 25px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-content {
+                font-size: 13px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 8px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-content p {
+                margin: 10px; /* Ajustar margem para menor espaçamento */
+                font-size: 19px;
+            }
+            .acordeon-headerb {
+                font-size: 16px; /* Reduz ainda mais o tamanho do texto */
+                padding: 10px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 25px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-contentb {
+                font-size: 13px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 8px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-contentb p {
+                margin: 10px; /* Ajustar margem para menor espaçamento */
+                font-size: 19px;
+            }
+
+            .acordeon-headerc {
+                font-size: 14px; /* Reduz ainda mais o tamanho do texto */
+                padding: 10px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 25px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-contentc {
+                font-size: 13px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 8px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-contentc p {
+                margin: 10px; /* Ajustar margem para menor espaçamento */
+                font-size: 19px;
+            }
+            .acordeon-headerd {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            .acordeon-contentd {
+                font-size: 13px;
+                padding: 8px;
+            }
+
+            .acordeon-contentd p {
+                margin: 10px;
+                font-size: 19px;
+            }
+        }
+            /* Acordeon styles FIM */
+
+            /* Título centralizado fora do container */
+        .titulo-figura-central {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+            font-weight: normal;
+            margin: 20px auto 15px auto;
+        }
+
+        .titulo-figura-central .figura {
+            color: #015A42; /* verde padrão */
+        }
+
+        .titulo-figura-central .figura::after {
+            content: " ";
+            white-space: pre;
+        }
+
+        /* Bloco de figura simples (sem borda e sem fundo) */
+        .bloco-figura-simples {
+            width: 90%;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0;
+            background: none;
+            border: none;
+            text-align: center;
+        }
+
+        /* Imagem centralizada */
+        .bloco-figura-simples .figura-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        .bloco-figura-simples .figura-container img {
+            max-width: 55%;
+            height: auto;
+            display: block;
+        }
+
+        /* Fonte abaixo da imagem */
+        .bloco-figura-simples .fonte-imagem {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin: 5px auto 12px auto;
+            max-width: 90%;
+        }
+
+        /* Descrição mais larga */
+        .bloco-figura-simples .descricao-figura-larga {
+            font-size: 14px;
+            color: #333;
+            text-align: justify;
+            line-height: 1.5;
+            max-width: 95%;
+            margin: 0 auto;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .titulo-figura-central {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            .bloco-figura-simples .descricao-figura-larga {
+                font-size: 13px;
+                max-width: 100%;
+            }
+        }
+         /* TESTES */
+
+        .quadro-problema {
+            max-width: 800px;
+            width: 95%; /* adapta o quadro à tela menor */
+            margin: 20px auto;
+            border: 2px solid #015A42;
+            border-radius: 10px;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .quadro-problema .topo {
+            background-color: #ffffff;
+            padding: 10px;
+            
+        }
+
+        .quadro-problema .resolucao {
+            background-color: #E2F4EB;
+            padding: 10px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .quadro-problema h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .quadro-problema p {
+            line-height: 1.6;
+            font-size: 16px;
+            margin: 20px auto;
+        }
+
+        .quadro-problema code {
+            background-color: #d9f0e1;
+            padding: 2px 4px;
+            border-radius: 20px;
+            font-family: monospace;
+        }
+        /* Estilos para cálculos matemáticos extensos */
+        .math-equation-container {
+            width: 100%;
+            overflow-x: auto;
+            padding: 10px 0;
+            margin: 10px 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .math-equation-container mjx-container {
+            min-width: fit-content;
+        }
+
+        /* Scroll personalizado para equações */
+        .math-equation-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .math-equation-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .math-equation-container::-webkit-scrollbar-thumb {
+            background: #9F43BE;
+            border-radius: 3px;
+        }
+
+        .math-equation-container::-webkit-scrollbar-thumb:hover {
+            background: #8a32a9;
+        }
+
+        /* Ajustes responsivos */
+        @media (max-width: 768px) {
+            .math-equation-container {
+                padding: 8px 0;
+                margin: 8px 0;
+            }
+            
+            .resolucao p {
+                font-size: 0.95rem;
+                line-height: 1.4;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .math-equation-container {
+                padding: 6px 0;
+                margin: 6px 0;
+            }
+            
+            .resolucao p {
+                font-size: 0.9rem;
+            }
+        }
+        .figura-container-reduzida {
+            text-align: center; /* centraliza a imagem */
+            margin: 15px 0; /* espaço acima e abaixo da imagem */
+        }
+
+        .figura-container-reduzida img {
+            max-width: 65%; /* imagem ocupa a largura total no mobile */
+            height: auto; /* mantém proporção */
+            border-radius: 4px; /* opcional, suaviza bordas */
+        }
+        
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 768px) {
+            .quadro-problema {
+                width: 90%;
+                font-size: 15px;
+            }
+
+            .quadro-problema p {
+                font-size: 15px;
+                line-height: 1.5;
+            }
+
+            .figura-container-reduzida img {
+                max-width: 100%; /* imagem se ajusta completamente */
+            }
+
+            .quadro-problema .resolucao {
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quadro-problema {
+                width: 95%;
+                border-width: 1.5px;
+            }
+
+            .quadro-problema p {
+                font-size: 14px;
+            }
+
+            .figura-container-reduzida img {
+                max-width: 100%;
+            }
+        }
+
+        
+        .download-section {
+                padding: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+            }
+            .download-btn {
+                background-color: #9F43BE;
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+                padding: 10px 15px;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                transition: all 0.3s ease;
+                font-weight: bold;
+                margin-top: 80px;
+            }
+
+            .download-btn i {
+                font-size: 18px;
+            }
+
+            .download-btn:hover {
+                background-color: #7D3598;
+            }
+                /* ===== Seções de Conclusão e Referências ===== */
+        .conclusao, .referencias {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .conclusao {
+            background-color: #E2F4EB; /* fundo suave */
+        }
+
+        .referencias {
+            background-color: #FFF;
+            border-top: 3px solid #015A42;
+            border-bottom: 3px solid #015A42;
+        }
+
+        /* Títulos */
+        .titulo-conclusao, .titulo-referencias {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 50px;
+            font-weight: lighter;
+            color: #015A42;
+            margin: 10px auto 20px auto;
+            text-align: left; /* garante centralização em desktop */
+        }
+
+        /* Caixas de texto */
+        .conclusao .caixa-texto, 
+        .referencias .caixa-texto {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Parágrafos */
+        .conclusao .caixa-texto p,
+        .referencias .caixa-texto p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 19px;
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        /* Cores de texto diferentes */
+        .conclusao .caixa-texto p {
+            color: #333;
+        }
+        .referencias .caixa-texto p {
+            color: #000;
+        }
+
+        /* Links em referências */
+        .referencias .caixa-texto a {
+            word-break: break-all;
+            color: #015A42;
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .titulo-conclusao, .titulo-referencias {
+                font-size: 2rem;
+            }
+            .conclusao .caixa-texto p,
+            .referencias .caixa-texto p {
+                font-size: 1rem;
+                line-height: 1.4;
+            }
+            .conclusao .caixa-texto, 
+            .referencias .caixa-texto {
+                max-width: 95%;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .titulo-conclusao, .titulo-referencias {
+                font-size: 1.8rem;
+            }
+            .conclusao .caixa-texto, 
+            .referencias .caixa-texto {
+                max-width: 100%;
+                padding: 10px;
+            }
+        }
+
+        /* Estilização do rodapé */
+        .footer {
+            border-top: 3px solid #015A42; /* Borda superior */
+            background-color: #FFFFFF; /* Fundo branco */
+            text-align: center; /* Centralizar texto */
+            padding: 15px 0; /* Espaçamento interno */
+            box-sizing: border-box; /* Inclui padding nas dimensões */
+        }
+
+        .footer p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #015A42; /* Cor do texto */
+            margin: 0; /* Remove espaçamento externo */
+        }
+        /* Texto descritivo */
+        .footer .fonte-menor {
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            color: #555; /* Cor neutra */
+            line-height: 1.5; /* Espaçamento entre linhas */
+            display: block; /* Garante quebra para nova linha */
+            margin-top: 10px; /* Espaço entre o texto e o divisor */
+        }
+                /* Divisor */
+        .footer-divider {
+            border: none; /* Remove borda padrão */
+            height: 1px; /* Altura da linha */
+            background-color: #015A42; /* Cor da linha */
+            margin: 10px auto; /* Espaçamento vertical */
+            width: 80%; /* Define a largura do divisor */
+            opacity: 0.5; /* Reduz opacidade para suavizar */
+        }
+                /* Ajustes do rodapé para mobile */
+        @media (max-width: 480px) {
+            .footer p {
+                font-size: 15px; /* Ajusta o tamanho da fonte */
+            }
+            .footer .fonte-menor {
+                font-size: 12px; /* Reduz tamanho da fonte */
+                line-height: 1.4; /* Ajusta o espaçamento */
+            }
+            .footer-divider {
+                width: 100%; /* Ajusta largura do divisor no mobile */
+            }
+        }
+        .logo-final {
+            background-color: #b9e5a92c;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 3px solid #015A42;
+        }
+
+        .logo-final img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+        /* Nova seção com os títulos ocupando a tela inteira */
+        .ficha-titulos {
+            background-color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .ficha-titulos h2,
+        .ficha-titulos h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-weight: lighter;
+            font-size: 40px;
+            color: #0058B4;
+            margin: 10px 0;
+        }
+
+        /* Mantemos a ficha técnica como estava */
+        .ficha-tecnica {
+            background-color: #FFF;
+            padding: 60px 20px;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+        }
+
+        .ficha-tecnica p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 15px auto;
+            max-width: 700px;
+        }
+
+        .ficha-tecnica strong {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .paragraforeduzido {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://drive.google.com/thumbnail?id=1iZTd5_tOqqVTFtrgbqdKazN1J1Yk-PuE" alt="Logo">
+        </div>
+        <div class="menu-toggle">
+            <i class="bx bx-menu"></i>
+            <i class="bx bx-x" style="display: none;"></i> <!-- Ícone de fechar menu -->
+        </div>
+        <ul>
+            <li><a href="#introducao">Introdução</a></li>
+            <li><a href="#secao1">Tópico 1</a></li>
+            <li><a href="#secao2">Tópico 2</a></li>
+            <li><a href="#secao3">Tópico 3</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="#conclusao">Conclusão</a></li>
+            <li><a href="#referencias">Refs Bibliográficas</a></li>
+        </ul>
+    </div>
+    
+    
+    <!-- ESPAÇAMENTO -->
+    <section id="titulo" class="titulo-intro">
+        <h1 class="titulo-programa"></h1>
+    </section>
+    <!-- ESPAÇAMENTO -->
+    <section id="titulo" class="titulo-intro">
+        <h1 class="titulo-programa"></h1>
+    </section>
+    <!-- ESPAÇAMENTO -->
+    
+    <!-- Capa do Livro -->
+    <section id="capa-livro" class="capa-livro">
+        <div class="borda superior"></div>
+        <div class="conteudo-capa">
+            <h1 class="titulo-programa">PROGRAMA DE ATUALIZAÇÃO em fundamentos da</h1>
+            <h1 class="titulo-materia">QUÍMICA - NÍVEL 1</h1>
+            <h2 class="subtitulo-professor">Profª Monica Tais Siqueira D'Amelio Felippe</h2>
+        </div>
+        <div class="borda inferior"></div>
+    </section>
+    
+    <!-- ESPAÇAMENTO -->
+    <section id="titulo" class="titulo-intro">
+        <h1 class="titulo-programa"></h1>
+    </section>
+    <!-- ESPAÇAMENTO -->
+    <section id="titulo" class="titulo-intro">
+        <h1 class="titulo-programa"></h1>
+    </section>
+    <!-- ESPAÇAMENTO -->
+    
+    
+    <!-- Seção Introdução -->
+    <section id="introducao" class="introducao">
+        <!-- Barra Superior -->
+        <div class="barra-superior">
+            <h1 class="titulo-barra">UNIDADE 1 | Classificação da Matéria</h1>
+        </div>
+    
+        <!-- Conteúdo -->
+        <div class="caixa-texto">
+            <div class="conteudo-centralizado">
+                <h1 class="titulo-introducao">INTRODUÇÃO</h1>
+                <p>Olá, estudante!</p>
+                <p>
+                    Você já parou para pensar do que tudo ao seu redor é feito? Da água que bebemos ao ar que respiramos,
+                    tudo é formado por matéria, e compreender como ela se organiza é o primeiro passo para desvendar os
+                    fenômenos que acontecem no nosso dia a dia.
+                </p>
+                <p>
+                    Nesta unidade, vamos revisar os conceitos fundamentais de matéria, seus estados físicos, propriedades,
+                    além de entender a diferença entre substâncias e misturas. Para isso, vamos combinar teoria, exemplos
+                    práticos e exercícios que vão te ajudar a reforçar o raciocínio lógico e aplicar os conhecimentos.
+                </p>
+                <p>
+                    Vamos iniciar nossos estudos?
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="secao1" id="secao1">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                1. MATÉRIA
+            </h1>
+        </div>
+        
+        <p>
+            Existe uma definição comum para matéria:
+        </p>
+        <br><br>
+        <div class="caixa-dupla">
+            <div class="caixa-conteudo">
+                Matéria é tudo que possui massa e ocupa volume no espaço.
+            </div>
+        </div>
+        <br><br>
+        <p>
+            Mas o que isso significa? Para ficar mais fácil o entendimento, considere uma janela de vidro. A luz solar
+            passa por ela sem quebrá-la ou provocar qualquer dano. Já uma pedra não consegue atravessar uma
+            janela de vidro sem danificá-la, isto é, o vidro é quebrado. A luz não possui massa, ela é uma forma de
+            energia. A pedra possui massa, então é classificada como matéria. Dessa definição pode-se extrair mais
+            um conceito. Dois corpos não ocupam o mesmo espaço. Então, tudo que tem matéria ocupa seu próprio
+            espaço (Dias, S.D.; Kotz, 2015).
+        </p>
+        <div class="faixa-verde">
+            <h1 class="titulo-secao" style="font-size: 22px !important;">
+                1.1. ESTADOS DA MATÉRIA
+            </h1>
+        </div>
+        <p>
+            As matérias podem se apresentar em três estados: sólido, líquido ou gasoso. Veja o vídeo a seguir:
+        </p>
+        <br>
+        <div class="video-play-wrapper">
+            <div class="video-play-btn" data-video=""
+                onclick="openVideoModal(this)">
+                <i class='bx bx-play'></i>
+            </div>
+            <div class="video-play-text">Clique para assistir</div>
+        </div>
+        
+        </div>
+        <!-- Modal com o vídeo -->
+        <div id="videoModal" class="video-modal" onclick="closeVideoModal()">
+            <div class="video-content" onclick="event.stopPropagation()">
+                <i class="bx bxs-x-circle close-btn" onclick="closeVideoModal()"></i>
+                <iframe id="videoIframe" width="800" height="450" src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+    <!-- Contêiner externo para definir a cor de fundo -->
+    <section class="outer-background">
+        <!-- Seção Saiba Mais - Retângulo de Fundo -->
+        <section class="background-section">
+            <!-- Círculo Verde -->
+            <div class="circle-green">
+                <!-- Círculo Branco com ícone -->
+                <div class="circle-white">
+                    <i class='bx bx-book-reader'></i>
+                </div>
+            </div>
+            <div class="transparent-section">
+                <h1 class="learn-more-title">SAIBA MAIS</h1>
+                
+                <p class="learn-more-paragraph">
+                    Para compreender melhor como as partículas se comportam nos diferentes estados
+                    físicos da matéria, convidamos você a explorar o simulador interativo disponível a
+                    seguir. No aplicativo, é possível observar de forma dinâmica como as partículas se
+                    organizam nos estados sólido, líquido e gasoso, além de testar o efeito da temperatura
+                    e da pressão sobre essas transformações. Aproveite esse recurso digital para
+                    experimentar, observar e consolidar seus conhecimentos de forma prática e visual.
+                    <br><br>
+                    <strong>Link</strong>: <a href="https://phet.colorado.edu/sims/html/states-of-matter-basics/latest/states-of-matter-basics_all.html?locale=pt_BR"
+                        target="_blank" rel="noopener noreferrer" class="link-sim">
+                        https://phet.colorado.edu/sims/html/states-of-matter-basics/latest/states-of-matter-basics_all.html?locale=pt_BR
+                    </a><br>
+                </p>
+            </div>
+        </section>
+    </section>
+    
+    <section class="secao1" id="secao1">
+        <p></p>
+        <p></p>
+        <p>
+            A principal diferença entre os estados de uma matéria é a organização molecular (Ramos, 2016; Souza,
+            s.d.). Clique nas abas a seguir para conhecer as características de cada estado físico da matéria.
+        </p>
+        <br>
+        <div class="tabs-container">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="tab1">1 - Estado Sólido</button>
+                <button class="tab-button" data-tab="tab2">2 - Estado Líquido</button>
+                <button class="tab-button" data-tab="tab3">3 - Estado Gasoso</button>
+            </div>
+        
+            <div id="tab1" class="tab-content active">
+                1- As partículas estão muito próximas umas das outras e organizadas de forma ordenada. Isso faz com que
+                o sólido tenha forma e volume definidos.
+                <br><br>
+                <strong>Exemplo</strong>: pedra, gelo, ferro.
+            </div>
+        
+            <div id="tab2" class="tab-content">
+                2 - As partículas estão mais afastadas e desorganizadas do que no estado sólido, o que faz com que os
+                líquidos não tenham forma definida e se adaptem ao espaço, mantendo seu volume constante.
+                <br><br>
+                <strong>Exemplo</strong>: água, óleo, leite.
+            </div>
+        
+            <div id="tab3" class="tab-content">
+                3 - As partículas estão muito afastadas e em constante movimento. O gás não possui forma nem volume
+                definidos, ocupando completamente o espaço do recipiente.
+                <br><br>
+                <strong>Exemplo</strong>: ar, vapor de água, gás carbônico.
+            </div>
+        </div>
+        <br>
+        <div class="faixa-verde">
+            <h1 class="titulo-secao" style="font-size: 22px !important;">
+                1.2. PROPRIEDADES DA MATÉRIA
+            </h1>
+        </div>
+        <p>
+            A matéria é caracterizada por algumas propriedades que podem ser gerais, específicas e químicas. As
+            propriedades gerais são aquelas que não definem um tipo de material. Por exemplo, posso colocar 3
+            materiais diferentes na sua frente e todos com massa de 10 kg. Como eu tenho mais de um material que
+            tem essa propriedade, ela não caracteriza meu material, portanto é uma propriedade geral (Souza, s.d.;
+            Kotz, 2015).
+        </p>
+        <p>
+            Use as setas para explorar as propriedades gerais da matéria.
+        </p>
+
+        <br>
+        <section class="slider-texto-container tema-green" data-slider-id="2">
+            <!-- conteúdo do slider 2 -->
+            <div class="slider-texto-wrapper">
+                <div class="slide-texto ativo">
+                    <p class="conteudo-texto">
+                        <strong>Massa</strong> - quantidade de matéria de um corpo.
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        <strong>Inércia</strong> - resistência de um corpo para sair de um estado de repouso ou movimento, isto é,
+                        quando apresenta velocidade constante e sofre variação.
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        <strong>Peso</strong> - é a força de atração de um corpo à Terra.
+                    </p>
+                </div>
+            </div>
+        
+            <button class="seta-texto esquerda" onclick="mudarSlideTexto(this, -1)">&#10094;</button>
+            <button class="seta-texto direita" onclick="mudarSlideTexto(this, 1)">&#10095;</button>
+        
+            <div class="slider-texto-indicadores">
+            </div>
+        </section>
+        <br>
+        <p>
+            Agora que você já conhece as propriedades gerais, vamos conhecer as propriedades específicas da
+            matéria? São elas que caracterizam a matéria (Ramos, 2016; Kotz, 2015). Por exemplo, se eu falar que
+            uma substância entrou em ebulição a 100°C no nível do mar, você sabe que é a água.
+        </p>
+        <p>
+            Clique nos títulos abaixo para conhecer as propriedades específicas da matéria.
+        </p>
+
+        <br>
+        <!-- Acordeons -->
+        <div class="acordeon-container">
+            <!-- Primeiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    PONTO DE FUSÃO OU SOLIDIFICAÇÃO
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Temperatura em que a matéria passa do estado sólido para o estado líquido ou do estado
+                        líquido para o estado sólido, respectivamente.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Segundo acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    PONTO DE EBULIÇÃO OU LIQUEFAÇÃO
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Temperatura em que a matéria passa do estado líquido para o gasoso ou do estado
+                        gasoso para o estado líquido, respectivamente.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    CALOR ESPECÍFICO
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        É a quantidade de calor necessária para aumentar ou reduzir a temperatura de 1 grama
+                        de matéria em 1 grau Celsius (°C).
+                    </p>
+                </div>
+            </div>
+
+            <!-- terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    DENSIDADE
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        É a quantidade de matéria que ocupa uma unidade de volume.
+                    </p>
+                </div>
+            </div>
+
+            <!-- terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    PROPRIEDADE MAGNÉTICA
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Capacidade da matéria em atrair metal.
+                    </p>
+                </div>
+            </div>
+
+            <!-- terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    MALEABILIDADE
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Propriedade específica dos metais de serem transformados em lâmina.
+                    </p>
+                </div>
+            </div>
+
+            <!-- terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    DUCTIBILIDADE
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Propriedade da matéria que representa o grau que ela pode ser deformada antes de
+                        se romper.
+                    </p>
+                </div>
+            </div>
+
+            <!-- terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    DUREZA
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        É a resistência que a matéria apresenta ao ser riscada.
+                    </p>
+                </div>
+            </div>
+
+            <!-- terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    ELASTICIDADE
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Capacidade de uma matéria sofrer uma força de compressão ou expansão e retornar à
+                        sua condição inicial.
+                    </p>
+                </div>
+            </div>
+
+            <!-- terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    COMPRESSIBILIDADE
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        A matéria tem a propriedade de reduzir de volume ao ser submetida à pressão.
+                    </p>
+                </div>
+            </div>
+
+            <!-- terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    TENACIDADE
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        É a propriedade de resistência a impactos mecânicos.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p>
+            Existem ainda as propriedades químicas, que definem o tipo de interação química que ocorre entre os
+            diferentes tipos de matéria.
+        </p>
+        <div class="faixa-verde">
+            <h1 class="titulo-secao" style="font-size: 22px !important;">
+                1.3. MASSA E PESO
+            </h1>
+        </div>
+        <p>
+            Quando se deseja saber a quantidade de matéria de determinado corpo, costuma-se perguntar qual é seu
+            peso. Entretanto, o peso não indica quantidade de matéria, mas a força com que essa matéria é atraída
+            para uma determinada superfície. O que define essa quantidade é a massa (Kotz, 2015).
+        </p>
+        <br><br>
+        <div class="caixa-dupla">
+            <div class="caixa-conteudo">
+                Massa é definida como a quantidade de matéria que um corpo possui. Peso é
+                definido como a força gravitacional dessa matéria.
+            </div>
+        </div>
+        <br><br>
+        <p>
+            A massa pode ser determinada em uma balança, e apresenta unidade de medida de quilograma (kg), grama
+            (g), miligrama (mg), etc. O peso depende da força da gravidade local e pode ser calculado pela a Equação 1.
+        </p>
+        <p style="text-align:center;">
+            <span style="display:inline-block; padding:8px 20px; border:2px solid #015A42; border-radius:10px;">
+                \( p = m \cdot g \quad (1) \)
+            </span>
+        </p>
+        <br>
+        <p>
+            Onde \(P\) é o peso medido em Newton (N), <i>m</i> é a massa medida em quilograma (kg) e \(g\)
+            é a aceleração da gravidade medida em m/s².
+        </p>
+        <p>
+            Vamos ver um exemplo de como podemos relacionar a massa com o peso?
+        </p>
+        <br><br>
+        <p>
+            <strong>Exemplo 1.</strong> Calcule o peso de uma pessoa de 50 kg em Santos, onde a gravidade é 10 m/s², e em São
+            Paulo, onde a gravidade é de 9,8 m/s².
+        </p>
+        <p>
+            <strong>Resolução:</strong> Vamos aplicar a Equação 1 para os dois locais.
+        </p>
+        <br>
+        <p>Santos:</p>
+        <p style="text-align:center;">
+            \( P_{\text{santos}} = m \cdot g_{\text{santos}} = 50\,\text{kg} \cdot 10\,\dfrac{\text{m}}{\text{s}^{2}} =
+            500\,\text{N} \)
+        </p>
+        <p>
+            São Paulo:
+        </p>
+        <p style="text-align:center;">
+            \( P_{\text{são paulo}} = m \cdot g_{\text{são paulo}} = 50 \, \text{kg} \cdot 9,8 \, \dfrac{\text{m}}{\text{s}^{2}} = 490 \, \text{N} \)
+        </p>
+        <br>
+        <p>
+            <strong>Resposta:</strong> A pessoa pesa 500 N em Santos e 490 N em São Paulo.
+        </p>
+        <br><br>
+        <p>
+            Observe que, embora a massa da pessoa seja a mesma, o seu peso muda, dependendo do local onde a
+            pessoa está.
+        </p>
+    </section>
+    <section class="secao2" id="secao2">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                2. SUBSTÂNCIAS E MISTURAS
+            </h1>
+        </div>
+        <p>
+            As matérias são formadas por pequenas partículas, denominadas átomos, os quais se agrupam de
+            diferentes maneiras e, assim, formam as moléculas. Muitas moléculas juntas foram as substâncias.
+        </p>
+        <br><br>
+        <div class="caixa-dupla">
+            <div class="caixa-conteudo">
+                Substâncias são matérias formadas por um único tipo de molécula, por exemplo,
+                água, sal, ferro e outras. Essas substâncias podem ser puras simples ou compostas.
+            </div>
+        </div>
+        <br><br>
+        <p>
+            Quando a molécula é formada por um único tipo de elemento químico, a substância é denominada de
+            <strong>substância pura ou simples</strong>, como o hidrogênio gasoso \(({H}_2)\), o ferro (Fe) e o ozônio \({O}_3\), entre outras.
+            Já quando as moléculas são formadas por mais de um tipo de elemento químico, a <strong></strong>substância é dita
+            como <strong>composta</strong>, como a água \({H}_2\text{O}\), o sal (NaCl) e a amônia \({NH}_3\) (Dias, s.d. B; Fogaça, s.d.).
+        </p>
+        <p>
+            Vamos entender melhor essa classificação, entendendo a diferença entre átomo e elemento químico.
+            Elemento químico é o tipo do átomo. Veja na molécula \({H}_2\), em que temos um único tipo de elemento 
+            químico, mas são dois átomos. Na molécula do sal, NaCl, também temos dois átomos, mas são dois átomos
+            diferentes e, portanto, dois elementos químicos (Kotz, 2015; Fogaça, s.d.).
+        </p>
+        <p>
+            As Figuras 1 e 2 apresentam exemplos de substâncias simples e composta. No caso da simples, temos
+            o ozônio, que é formado por um único tipo de elemento químico, o oxigênio, e possui três átomos de oxi
+            gênio. No caso da substância composta, temos a água, que é formada por três átomos de dois elementos
+            químicos diferentes.
+        </p>
+
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 1</strong>.</span> Molécula do Ozônio - substância pura.<br>Molécula formada por três átomos de oxigênio</h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761865150/fig1_vxc9m2.png"
+                    alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: Elaborada pela autora, 2025.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                Na Figura 1, está a molécula do ozônio, representada por três esferas vermelhas conectadas entre si, indicando três
+                átomos de oxigênio. Trata-se de uma substância pura formada apenas por oxigênio, ou seja, um único elemento químico.
+            </p>
+        </section>
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 2</strong>.</span> Molécula da água - substância composta.<br> Molécula formada por dois átomos de hidrogênio e um de oxigênio</h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761865150/Fig2_z7wkrv.png"
+                    alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: Elaborada pela autora, 2025.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                Na Figura 2, está a molécula da água, composta por uma esfera azul conectada a duas esferas amarelas. A esfera
+                azul representa o átomo de oxigênio e as amarelas, os átomos de hidrogênio, indicando que a água é uma substância
+                composta por elementos
+                químicos diferentes, sendo dois átomos de hidrogênio e um de oxigênio. Ambas as representações ilustram a estrutura
+                molecular simplificada
+                das substâncias.
+            </p>
+        </section>
+        <br>
+        <p>
+            Quando duas ou mais substâncias são misturadas tem-se uma <strong>mistura</strong>. Essa mistura pode estar em
+            uma única fase, denominada <strong>mistura homogênea</strong>, ou em mais de uma fase, denominada <strong>mistura
+            heterogênea</strong>. Para entender melhor é preciso definir o que é fase. Quando é possível observar apenas
+            um aspecto, e ele é uniforme como um todo, diz-se que só há uma fase. Quando se observa um aspecto
+            não uniforme, diz-se que há mais de uma fase (Dias, s.d. b; Fogaça, s.d.; Kotz, 2015).
+        </p>
+        <p>
+            No vídeo a seguir, você vai descobrir como esses conceitos se relacionam e o que distingue uma substância
+            simples de uma composta. Assista e aprofunde seus conhecimentos sobre a base da constituição da matéria!
+        </p>
+        <br>
+        <div class="video-play-wrapper">
+            <div class="video-play-btn" data-video="" onclick="openVideoModal(this)">
+                <i class='bx bx-play'></i>
+            </div>
+            <div class="video-play-text">Clique para assistir</div>
+        </div>
+        
+        </div>
+        <!-- Modal com o vídeo -->
+        <div id="videoModal" class="video-modal" onclick="closeVideoModal()">
+            <div class="video-content" onclick="event.stopPropagation()">
+                <i class="bx bxs-x-circle close-btn" onclick="closeVideoModal()"></i>
+                <iframe id="videoIframe" width="800" height="450" src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        <br>
+        <p>
+            Considere uma mistura de água com sal. Desde que o sal não esteja em excesso, essa mistura é considerada
+            homogênea. Uma mistura de gases, como oxigênio e nitrogênio, também é considerada homogênea. Ao
+            misturar água com óleo, observam-se duas fases. Desta forma, essa mistura é considerada heterogênea.
+        </p>
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 3</strong>.</span> Comparação de uma mistura homogênea (água e sal)<br> 
+            com uma mistura heterogênea (água e areia)</h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761865150/Fig3_cwinoa.jpg"
+                    alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: inkoly / 123RF.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                A imagem apresenta dois frascos de vidro contendo líquidos, com o objetivo de comparar visual
+                mente uma mistura homogênea e uma mistura heterogênea. À esquerda, o frasco está rotulado como “Solução” e contém
+                água com pouca quantidade de sal, representada por um líquido azul uniforme, sem separação de fases, indicando que os
+                componentes estão totalmente dissolvidos. À direita, o frasco está rotulado como “Mistura” e contém água com areia,
+                sendo
+                a água representada por um líquido azul e a área representada por uma camada de material amarelado depositada no fun
+                do, mostrando a separação das fases e caracterizando uma mistura heterogênea.
+            </p>
+        </section>
+        <br>
+        <p>
+            As misturas podem apresentar-se nos três estados físicos: líquido, sólido e gasoso. As misturas líquidas e gasosas
+            são fáceis de imaginar. Mas as misturas sólidas também estão muito presentes no cotidiano (KOTZ, 2015). O
+            granito é uma rocha formada por substâncias de quartzo, feldspato e mica. É possível observar a presença de
+            mais de uma substância em seu aspecto. Assim, o granito é classificado como uma mistura heterogênea.
+        </p>
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 4</strong>.</span> Granito - mistura de sólidos heterogênea</h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761865977/fig4_t13r0a.jpg"
+                    alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: mariok / 123RF.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                A imagem apresenta uma rocha de granito, de aparência rugosa e coloração predominantemente
+                escura, com manchas claras e pequenas variações de tonalidade. A superfície evidencia a presença de diferentes minerais,
+                como quartzo, feldspato e mica, visíveis a olho nu. Esses componentes não estão uniformemente distribuídos, o que carac
+                teriza o granito como uma mistura heterogênea de sólidos.
+            </p>
+        </section>
+        <br>
+        <p>
+            O bronze é uma mistura de cobre e estanho. Quando bem preparado, não é possível observar aspectos
+            diferentes em sua composição. Assim, é considerado uma mistura homogênea.
+        </p>
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 5</strong>.</span> Bronze - mistura de sólidos homogênea</h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761866079/Fig5_ssgptj.jpg"
+                    alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: andreykuzmin / 123RF.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                A imagem apresenta a superfície de uma chapa de bronze com textura metálica e coloração 
+                dourada uniforme. A aparência é contínua e brilhante, sem variações visíveis de cor ou composição. Apesar de ser uma liga
+                metálica formada por cobre e estanho, os componentes não são distinguíveis, o que caracteriza o bronze como uma mistura
+                homogênea de sólidos.
+            </p>
+        </section>
+        <br>
+        <p>
+            Existem algumas misturas que são consideradas homogêneas, mas na realidade não o são. Um exemplo
+            é o sangue. Na primeira impressão, ele parece ser homogêneo, mas ao analisá-lo mais de perto, é
+            possível observar a presença do plasma. O mesmo acontece com o leite, ao ser observado mais de perto,
+            é possível identificar a presença de gorduras amarelas misturadas ao leite branco (Fogaça, s.d.).
+        </p>
+        <p>
+            As substâncias e as misturas ainda diferem em outra característica: no comportamento da temperatura de
+            ebulição. Quando a substância, seja simples ou composta, entra em estado de ebulição, sua temperatura
+            permanece constante durante todo o processo de mudança de fase. Com a mistura isso não acontece; a
+            temperatura aumenta durante todo o processo de ebulição. Esse fenômeno pode ser observado na Figura 6.
+        </p>
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 6</strong>.</span> Comparação dos pontos de ebulição entre <br>uma substância (simples ou composta) e uma mistura.</h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761866704/fig6_dsqryg.png"
+                    alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: Elaborada pela autora (2025).</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                A imagem apresenta um gráfico cartesiano com o eixo vertical representando a temperatura e o
+                eixo horizontal representando o tempo. Duas curvas estão desenhadas: a curva em vermelho representa uma substância
+                e apresenta um patamar horizontal, indicando que a temperatura permanece constante durante a ebulição. Já a curva em
+                laranja representa uma mistura e mostra um aumento contínuo da temperatura ao longo do tempo, sem platô, indicando que
+                a ebulição ocorre com variação de temperatura. O gráfico ilustra a diferença entre o ponto de ebulição constante de uma
+                substância pura e a ebulição com variação de temperatura para uma mistura.
+            </p>
+        </section>
+        <br>
+        <p>
+            Quer visualizar melhor a diferença entre substâncias e misturas? No vídeo a seguir, você encontrará
+            explicações claras e exemplos ilustrados em um gráfico que ajuda a compreender como a matéria pode
+            ser classificada. Assista e fortaleça sua compreensão com apoio visual e comparações práticas.
+        </p>
+        <br>
+        <div class="video-play-wrapper">
+            <div class="video-play-btn" data-video="" onclick="openVideoModal(this)">
+                <i class='bx bx-play'></i>
+            </div>
+            <div class="video-play-text">Clique para assistir</div>
+        </div>
+        
+        </div>
+        <!-- Modal com o vídeo -->
+        <div id="videoModal" class="video-modal" onclick="closeVideoModal()">
+            <div class="video-content" onclick="event.stopPropagation()">
+                <i class="bx bxs-x-circle close-btn" onclick="closeVideoModal()"></i>
+                <iframe id="videoIframe" width="800" height="450" src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        
+        <p>
+            Vamos praticar?
+        </p>
+        <br>
+        <div class="faixa-verde" id="secao3">
+            <h1 class="titulo-secao">
+                3. EXERCÍCIOS COMENTADOS
+            </h1>
+        </div>
+        <br>
+        <div class="quadro-problema">
+            <div class="topo">
+                <p>
+                    <strong>1)</strong> Assinale a alternativa que NÃO representa uma matéria:
+                </p>
+        
+                <p>
+                    a) Mesa.
+                </p>
+                <p>
+                    b) Lápis.
+                </p>
+                <p>
+                    c) Luz solar.
+                </p>
+                <p>
+                    d) Livro.
+                </p>
+                <p>
+                    e) Mochila.
+                </p>
+            </div>
+            <div class="resolucao">
+                <p><strong>Resolução:</strong> Conforme estudado no início da Unidade, matéria é tudo aquilo que tem massa e ocupa
+                espaço, desta forma, o único item que não corresponde a essa definição é a Luz solar, alternativa c.</p>
+            </div>
+        </div>
+        
+        <!-- Aplicando a correção nos cálculos problemáticos -->
+        <div class="quadro-problema">
+            <div class="topo">
+                <p><strong>2)</strong> 
+                Apesar da massa de um corpo não variar independente do lugar que esse corpo esteja, o peso varia
+                de acordo com a localidade, pois ele depende da gravidade local. Determine o peso de uma pessoa de
+                80 kg em que a gravidade local é de 9,8 m/s².
+                </p>
+                
+            </div>
+            <div class="resolucao">
+                <p><strong>Resolução:</strong> O peso é determinado segundo a equação:</p>
+                <br>
+                <p style="text-align:center;">
+                    \( p = m \cdot g \quad  \)
+                </p>
+                
+                <p>
+                    Para determiná-lo, é só substituir o valor da massa (m) que é 80 kg, e da gravidade (g) que é 9,8 m/s².
+                </p>
+                <p style="text-align:center;">
+                    \( P = 80 \, \text{kg} \cdot 9,8 \, \frac{\text{m}}{\text{s}^2} \)
+                </p>
+                <p style="text-align:center;">
+                    \( P = 784 \, \text{N} \)
+                </p>
+                
+            </div>
+        </div>
+        
+        <div class="quadro-problema">
+            <div class="topo">
+                <p>
+                    <strong>3)</strong> 
+                    A partir do peso, também é possível determinar a massa de uma pessoa se for conhecida a gravidade
+                    local. Determine a massa de uma pessoa que pesa 950 N em um local cuja gravidade é de 10 m/s².
+                </p>
+            </div>
+            <div class="resolucao">
+                <p><strong>Resolução:</strong> A equação</p>
+                
+                <p style="text-align:center;">
+                    \( p = m \cdot g \quad \)
+                </p>
+                
+                <p>
+                    relaciona a massa com o peso. Então, substitua o valor do peso <i>(P)</i> e da gravidade <i>(g)</i> para determinar o
+                    valor da massa.
+                </p>
+                
+                <p style="text-align:center;">
+                    \( 950 \, \text{N} = m \cdot 10 \, \frac{\text{m}}{\text{s}^2} \)
+                </p>
+                <p style="text-align:center;">
+                    \( m = \frac{950}{10} \)
+                </p>
+                <p style="text-align:center;">
+                    \( m = 95 \, \text{kg} \)
+                </p>
+            </div>
+        </div>
+
+        <div class="quadro-problema">
+            <div class="topo">
+                <p>
+                    <strong>4)</strong>
+                    As substâncias podem ser simples ou compostas. A diferença está na quantidade de elementos químicos
+                    na molécula. Aquela que apresenta apenas um tipo de elemento químico, é substância pura, e quanto
+                    tem mais de um tipo de elemento químico, é substância composta. Assinale a alternativa em que todas as
+                    substâncias são puras:
+                </p>
+                <br>
+                <p>
+                    a) \( \text{O}_2 ; \text{H}_2\text{O} ; \text{NaCl} ; \text{NO}_2 \) <br><br>
+                    b) \( \text{Cl}_2 ; \text{KCl} ; \text{O}_2 ; \text{NO}_2 \) <br><br>
+                    c) \( \text{Hg} ; \text{Cl}_2 ; \text{O}_2 ; \text{Br}_2 \) <br><br>
+                    d) \( \text{Br}_2 ; \text{O}_2 ; \text{KCl} ; \text{NO}_2 \)
+                </p>
+                <br>
+            </div>
+            <div class="resolucao">
+                <p><strong>Resolução:</strong> 
+                    Uma substância simples é aquela que apresenta moléculas formadas por apenas um tipo de átomo. 
+                    A alternativa que apresenta apenas substâncias puras é a alternativa
+                    c) \( \text{Hg} ; \text{Cl}_2 ; \text{O}_2 ; \text{Br}_2 \)
+                </p>
+            </div>
+        </div>
+
+        <div class="quadro-problema">
+            <div class="topo">
+                <p>
+                    <strong>5)</strong>
+                    Vamos verificar se você entendeu o que são substâncias simples e compostas. Preencha os campos
+                    ( ) com SP para substância pura, SC para substância composta, MHo para mistura homogênea e MHe
+                    para mistura heterogênea.
+                </p>
+                <br>
+                <p>
+                    ( ) água pura. <br><br>
+                    ( ) água com sal.<br><br>
+                    ( ) oxigênio.<br><br>
+                    ( ) água e óleo.<br><br>
+                    ( ) sangue.
+                </p>
+                <br>
+            </div>
+            <div class="resolucao">
+                <p><strong>Resolução:</strong>
+                    (SC) água pura - a água é uma substância formada por dois tipos de átomos, então é uma
+                    substância composta.
+                </p>
+                
+                <p>
+                    (MHo) água com sal - como é formada por duas substâncias, é uma mistura. E como o sal não está em
+                    excesso, é uma mistura homogênea.
+                </p>
+                
+                <p>
+                    (SP) oxigênio - é uma substância formada por apenas um tipo de átomo.
+                </p>
+                
+                <p>
+                    (MHe) água e óleo - é formada por duas substâncias que não se misturam, portanto formam duas fases.
+                    É uma mistura heterogênea.
+                </p>
+                
+                <p>
+                    (MHe) sangue - como explicado no texto, quando observado em microscópio, é possível observar várias
+                    substâncias misturadas, portanto, é uma mistura heterogênea.
+                </p>
+            </div>
+        </div>
+
+        <div class="quadro-problema">
+            <div class="topo">
+                <p>
+                    <strong>6)</strong>
+                    Observe os gráficos a seguir.
+                </p>
+                <br>
+                <section class="bloco-figura-simples tema-verde">
+                <!-- Imagem do exercício -->
+                <div class="figura-container-reduzida">
+                    <img class="zoomable"
+                        src="https://res.cloudinary.com/di4ria1pf/image/upload/v1761868486/fig7_bwjctb.png" alt="">
+                </div>
+                    <!-- Fonte abaixo da imagem -->
+                    <p class="fonte-imagem">
+                        <strong><i>Fonte</strong>: Elaborados pela autora (2019).</i>
+                    </p>
+                </section>
+                
+                <p>
+                    Assinale a alternativa que apresenta a sequência correta da representação dos gráficos em relação à
+                    substância e mistura.
+                </p>
+
+                <p>
+                    a) Substância, Substância, Mistura, Mistura. <br><br>
+                    b) Mistura, Mistura, Substância, Substância.<br><br>
+                    c) Mistura, Substância, Substância, Mistura.<br><br>
+                    d) Substância, Mistura, Mistura, Substância.
+                </p>
+
+            </div>
+            <div class="resolucao">
+                <p><strong>Resolução:</strong>
+                    A substância é caracterizada por ter ponto de ebulição à temperatura constante, isto é, no
+                    gráfico de temperatura por tempo, observa-se um patamar. Já a mistura apresenta variação de temperatura
+                    durante o processo de ebulição, desta forma, não é observado o patamar. Assim, a sequência correta é a
+                    da alternativa d). Substância, Mistura, Mistura, Substância.
+                </p>
+        
+                
+            </div>
+        </div>
+    </section>
+    <!-- Seção Conclusão -->
+    <section id="conclusao" class="conclusao">
+        <!-- Conteúdo -->
+        <div class="conteudo-conclusao">
+            <div class="caixa-texto">
+                <h1 class="titulo-conclusao">CONCLUSÃO</h1>
+                <p>
+                    Nesta unidade, retomamos conceitos essenciais para compreender a composição e o comportamento da
+                    matéria. Relembramos o que é matéria, seus estados físicos, suas propriedades, além da diferença entre
+                    substâncias e misturas. Também revisamos os conceitos de massa e peso, entendendo suas aplicações
+                    práticas.
+                </p>
+                <p>
+                    Por fim, trabalhamos atividades para desenvolver o raciocínio lógico e aplicar os conhecimentos em
+                    situações do cotidiano. Agora é hora de continuar praticando e fortalecendo o seu aprendizado!
+                </p>
+            </div>
+        </div>
+        <div id="download" class="download-section">
+            <a href="https://drive.google.com/uc?export=download&id=1KQ4hB8QkK9ILnJe60LAEE1g4gHhy5sJU" class="download-btn">
+                Baixar PDF <i class="fas fa-download"></i> <!-- Ícone de download -->
+            </a>
+        </div>
+    </section>
+    <section id="referencias" class="referencias">
+        <!-- Conteúdo -->
+        <div class="conteudo-referencias">
+            <div class="caixa-texto">
+                <h1 class="titulo-referencias">REFERÊNCIAS</h1>
+    
+                <p>DIAS, D. L. O que é matéria? <strong>Brasil Escola</strong>, [s.d.]. Disponível em:
+                    <a href="https://brasilescola.uol.com.br/o-que-e/quimica/o-que-e-materia.htm" target="_blank">
+                        https://brasilescola.uol.com.br/o-que-e/quimica/o-que-e-materia.htm
+                    </a>
+                    Acesso em: 08 jul. 2025.
+                </p>
+    
+                <p>DIAS, D. L. Substâncias puras e misturas. <strong>Brasil Escola</strong>, [s.d.]. Disponível em:
+                    <a href="https://brasilescola.uol.com.br/quimica/mistura-e-substancias-puras.htm" target="_blank">
+                        https://brasilescola.uol.com.br/quimica/mistura-e-substancias-puras.htm
+                    </a>
+                    Acesso em: 08 jul. 2025.
+                </p>
+    
+                <p>FOGAÇA, J. R. V. Substâncias e Misturas. <strong>Mundo Educação</strong>, [s.d.]. Disponível em:
+                    <a href="https://mundoeducacao.bol.uol.com.br/quimica/substancias-misturas.htm" target="_blank">
+                        https://mundoeducacao.bol.uol.com.br/quimica/substancias-misturas.htm
+                    </a>
+                    Acesso em: 08 jul. 2025.
+                </p>
+    
+                <p>KOTZ, J. C. et al. <strong>Química geral e reações químicas.</strong> Volume 1. São Paulo:
+                    Cengage Learning, 2015. p. 6–9. Disponível na Minha Biblioteca. Acesso em: 08 jul. 2025.
+                </p>
+    
+                <p>RAMOS, M. Classificação da matéria – Química Enem. <strong>Blog do Enem</strong>, 7 jul. 2016.
+                    Disponível em:
+                    <a href="https://blogdoenem.com.br/classificacao-da-materia/" target="_blank">
+                        https://blogdoenem.com.br/classificacao-da-materia/
+                    </a>
+                    Acesso em: 08 jul. 2025.
+                </p>
+    
+                <p>SOUZA, L. A. Classificação da matéria. <strong>Brasil Escola</strong>, [s.d.]. Disponível em:
+                    <a href="https://brasilescola.uol.com.br/quimica/classificacao-materia.htm" target="_blank">
+                        https://brasilescola.uol.com.br/quimica/classificacao-materia.htm
+                    </a>
+                    Acesso em: 08 jul. 2025.
+                </p>
+    
+            </div>
+        </div>
+    </section>
+    <!-- Seção com os créditos e ficha técnica -->
+    <section class="ficha-tecnica">
+        <p>CASA NOSSA SENHORA DA PAZ – AÇÃO SOCIAL FRANCISCANA, PROVÍNCIA FRANCISCANA DA <br>
+            IMACULADA CONCEIÇÃO DO BRASIL – ORDEM DOS FRADES MENORES</p>
+        <br>
+        <p><strong>GESTOR DO CENTRO DE INOVAÇÃO E SOLUÇÕES EDUCACIONAIS - CISE</strong>
+            Franklin Portela Correia</p>
+    
+        <p><strong>COORDENADORA DO PROGRAMA DE ATUALIZAÇÃO</strong>
+            Flávia Cristina Franco de Lima Rosa</p>
+    
+        <p><strong>SUPERVISORA EDUCACIONAL</strong>
+            Juliane Cristine Batista</p>
+    
+        <p><strong>DESIGNER INSTRUCIONAL</strong>
+            Ana Angelica Miranda Ramos</p>
+    
+        <p><strong>PROJETO GRÁFICO</strong>
+            Andréa Calegari<br>
+            Lucas Ichimaru Testa</p>
+    
+        <p><strong>DIAGRAMADORES</strong>
+            Andréa Calegari<br>
+            Lucas Ichimaru Testa</p>
+    
+        <p><strong>DESENVOLVEDOR</strong>
+            Pedro Vinicius Pires de Oliveira Dias</p>
+    
+        <p><strong>PRODUTOR AUDIOVISUAL</strong>
+            Cassio Martins de Carvalho</p>
+    
+        <p><strong>EDIÇÃO DE VÍDEOS</strong>
+            Diogo Lefort Silva<br>
+            Rafael da Silva Oliveira<br>
+            Hugo Henrique Ferreira da Silva</p>
+    
+        <br><br>
+        <p><span class="paragraforeduzido">
+                © 2026 Universidade São Francisco<br>
+                Avenida São Francisco de Assis, 218<br>
+                CEP 12916-900 – Bragança Paulista/SP
+        </p></span>
+    </section>
+    <footer class="footer">
+        <p>Copyright © de Universidade São Francisco</p>
+        <hr class="footer-divider">
+        <span class="fonte-menor">Todos os direitos reservados. Este ebook ou
+            qualquer parte dele não pode ser reproduzido ou usado em quaisquer formas (eletrônico,
+            gravação, fotocópia, distribuição pela Internet ou outros) sem autorização
+            expressa, por escrito, da <strong>Universidade São Francisco.</strong></span>
+    </footer>
+    <script>
+
+
+        // Seleciona apenas os tabs dentro da div "tema-verde"
+        const temaVerdeContainers = document.querySelectorAll(".tabs-container");
+
+        temaVerdeContainers.forEach(container => {
+            const buttons = container.querySelectorAll(".tab-button");
+            const contents = container.querySelectorAll(".tab-content");
+
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    // Remove estado ativo anterior apenas dentro deste container
+                    buttons.forEach(btn => btn.classList.remove("active"));
+                    contents.forEach(content => content.classList.remove("active"));
+
+                    // Adiciona novo estado ativo
+                    button.classList.add("active");
+                    const target = container.querySelector(`#${button.dataset.tab}`);
+                    if (target) target.classList.add("active");
+                });
+            });
+        });
+
+        // Navbar
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            const menu = document.querySelector('.navbar ul');
+            const icons = document.querySelectorAll('.menu-toggle i'); // Seleciona ambos os ícones
+
+            menu.classList.toggle('show'); // Alterna a visibilidade do menu
+
+            // Alterna entre o ícone de abrir (menu) e o ícone de fechar (x)
+            icons[0].style.display = icons[0].style.display === 'none' ? 'block' : 'none'; // Mostra ou esconde o ícone de menu
+            icons[1].style.display = icons[1].style.display === 'none' ? 'block' : 'none'; // Mostra ou esconde o ícone de fechar
+        });
+        // Fechar o menu ao clicar em um link
+        const links = document.querySelectorAll('.navbar ul li a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                const menu = document.querySelector('.navbar ul');
+                const icons = document.querySelectorAll('.menu-toggle i');
+
+                // Fecha o menu ao clicar no link
+                menu.classList.remove('show');
+                icons[0].style.display = 'block'; // Exibe o ícone de menu
+                icons[1].style.display = 'none'; // Esconde o ícone de fechar
+            });
+        });
+        // Captura o elemento navbar
+        const navbar = document.querySelector('.navbar');
+
+        // Função que altera a opacidade da navbar
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { // Quando o scroll for maior que 50px
+                navbar.style.backgroundColor = 'rgba(159, 67, 190, 0.8)'; // Opacidade 80%
+            } else {
+                navbar.style.backgroundColor = '#9F43BE'; // Cor original sem transparência
+            }
+        });
+
+        document.querySelectorAll('.slider-quadrinhos').forEach((sliderContainer) => {
+            const slider = sliderContainer.querySelector('.slider');
+            const slides = slider.querySelectorAll('.slide');
+            const dots = sliderContainer.querySelectorAll('.dot');
+            let currentIndex = 0;
+
+            function mostrarSlide(index) {
+                currentIndex = (index + slides.length) % slides.length;
+                slides.forEach(slide => slide.classList.remove('ativo'));
+                dots.forEach(dot => dot.classList.remove('ativo'));
+
+                slides[currentIndex].classList.add('ativo');
+                dots[currentIndex].classList.add('ativo');
+            }
+
+            // Atribui os handlers aos botões de seta
+            sliderContainer.querySelector('.seta.esquerda').addEventListener('click', () => {
+                mostrarSlide(currentIndex - 1);
+            });
+            sliderContainer.querySelector('.seta.direita').addEventListener('click', () => {
+                mostrarSlide(currentIndex + 1);
+            });
+
+            // Atribui os handlers aos dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    mostrarSlide(index);
+                });
+            });
+
+            // Inicializa
+            mostrarSlide(0);
+        });
+
+        function prepararModal() {
+            document.querySelectorAll('.slider-quadrinhos').forEach((sliderContainer) => {
+                const imagens = sliderContainer.querySelectorAll('.slide');
+                imagens.forEach((img, index) => {
+                    img.style.cursor = 'pointer';
+                    img.addEventListener('click', () => {
+                        imagensModal = Array.from(imagens).map(i => i.src);
+                        indiceModal = index;
+                        abrirModal(imagensModal[indiceModal]);
+                    });
+                });
+            });
+        }
+
+        function abrirModal(src) {
+            document.getElementById('imagem-ampliada').src = src;
+            document.getElementById('modal-imagem').classList.add('ativo');
+            atualizarContador();
+            atualizarPontos();
+        }
+
+        function fecharModal() {
+            document.getElementById('modal-imagem').classList.remove('ativo');
+        }
+
+        function navegarModal(direcao) {
+            indiceModal = (indiceModal + direcao + imagensModal.length) % imagensModal.length;
+            document.getElementById('imagem-ampliada').src = imagensModal[indiceModal];
+            atualizarContador();
+            atualizarPontos();
+        }
+
+        function atualizarContador() {
+            document.getElementById('contador-modal').textContent = `${indiceModal + 1} / ${imagensModal.length}`;
+        }
+
+        function atualizarPontos() {
+            const container = document.getElementById('pontos-modal');
+            container.innerHTML = '';
+            imagensModal.forEach((_, i) => {
+                const ponto = document.createElement('span');
+                if (i === indiceModal) ponto.classList.add('ativo');
+                ponto.addEventListener('click', () => {
+                    indiceModal = i;
+                    document.getElementById('imagem-ampliada').src = imagensModal[i];
+                    atualizarContador();
+                    atualizarPontos();
+                });
+                container.appendChild(ponto);
+            });
+        }
+
+        // Cria o container lightbox
+        const lightbox = document.createElement("div");
+        lightbox.classList.add("lightbox");
+        document.body.appendChild(lightbox);
+
+        let scale = 1; // nível de zoom
+        let isDragging = false;
+        let startX, startY, translateX = 0, translateY = 0;
+
+        document.querySelectorAll(".zoomable").forEach(img => {
+            img.addEventListener("click", () => {
+                const imgClone = document.createElement("img");
+                imgClone.src = img.src;
+                imgClone.alt = img.alt;
+                imgClone.style.objectFit = "contain"; // garante que abre ajustada
+                imgClone.style.maxWidth = "100%";
+                imgClone.style.maxHeight = "100%";
+
+                lightbox.innerHTML = "";
+                lightbox.appendChild(imgClone);
+                lightbox.style.display = "flex";
+                scale = 1;
+                translateX = translateY = 0;
+                updateTransform(imgClone);
+
+                // Mensagem de dica
+                const hint = document.createElement("div");
+                hint.classList.add("lightbox-hint");
+                hint.innerText = "Use a roda do mouse para dar zoom e arraste para mover";
+                lightbox.appendChild(hint);
+
+                // Remove a dica após 4s
+                setTimeout(() => {
+                    if (hint && hint.parentNode) {
+                        hint.remove();
+                    }
+                }, 4000);
+
+                // Zoom com scroll
+                imgClone.addEventListener("wheel", e => {
+                    e.preventDefault();
+                    scale += e.deltaY * -0.001;
+                    scale = Math.min(Math.max(1, scale), 5); // limite de zoom
+                    updateTransform(imgClone);
+                });
+
+                // Arrastar imagem
+                imgClone.addEventListener("mousedown", e => {
+                    isDragging = true;
+                    startX = e.clientX - translateX;
+                    startY = e.clientY - translateY;
+                    lightbox.style.cursor = "grabbing";
+                });
+
+                window.addEventListener("mousemove", e => {
+                    if (!isDragging) return;
+                    translateX = e.clientX - startX;
+                    translateY = e.clientY - startY;
+                    updateTransform(imgClone);
+                });
+
+                window.addEventListener("mouseup", () => {
+                    isDragging = false;
+                    lightbox.style.cursor = "grab";
+                });
+            });
+        });
+
+        // Fecha clicando fora da imagem
+        lightbox.addEventListener("click", e => {
+            if (e.target === lightbox) {
+                lightbox.style.display = "none";
+            }
+        });
+
+        // Função para aplicar zoom + movimento
+        function updateTransform(img) {
+            img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+        }
+
+        document.querySelectorAll('.slider-texto-container').forEach(initSliderTexto);
+
+        function initSliderTexto(container) {
+            const slides = container.querySelectorAll('.slide-texto');
+            const indicatorsContainer = container.querySelector('.slider-texto-indicadores');
+
+            indicatorsContainer.innerHTML = ''; // Limpa indicadores anteriores
+
+            // Cria os dots dinamicamente
+            slides.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('dot-texto');
+                dot.onclick = () => mostrarSlide(index);
+                indicatorsContainer.appendChild(dot);
+            });
+
+            const dots = container.querySelectorAll('.dot-texto');
+            let currentIndex = 0;
+
+            function mostrarSlide(index) {
+                slides.forEach(slide => slide.classList.remove('ativo'));
+                dots.forEach(dot => dot.classList.remove('ativo'));
+
+                currentIndex = (index + slides.length) % slides.length;
+
+                slides[currentIndex].classList.add('ativo');
+                dots[currentIndex].classList.add('ativo');
+            }
+
+            // Armazena a função no container para chamadas externas
+            container.mostrarSlideTexto = mostrarSlide;
+            container.getCurrentIndex = () => currentIndex;
+            mostrarSlide(0);
+        }
+
+        // Chamado pelos botões de seta
+        function mudarSlideTexto(button, direcao) {
+            const container = button.closest('.slider-texto-container');
+            const currentIndex = container.getCurrentIndex();
+            container.mostrarSlideTexto(currentIndex + direcao);
+        }
+
+        // Chamado pelos dots (não necessário, mas deixado por compatibilidade)
+        function irParaSlideTexto(dot, index) {
+            const container = dot.closest('.slider-texto-container');
+            container.mostrarSlideTexto(index);
+        }
+
+
+        document.querySelectorAll('.acordeon-header, .acordeon-headerb, .acordeon-headerc, .acordeon-headerd').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const isVisible = content.style.display === 'block';
+                content.style.display = isVisible ? 'none' : 'block';
+                const icon = header.querySelector('.acordeon-icon');
+                if (icon) {
+                    icon.classList.toggle('bx-chevron-up', !isVisible);
+                    icon.classList.toggle('bx-chevron-down', isVisible);
+                }
+            });
+        });
+
+
+        document.querySelectorAll('.slider-texto-container').forEach(initSliderTexto);
+
+        function initSliderTexto(container) {
+            const slides = container.querySelectorAll('.slide-texto');
+            const indicatorsContainer = container.querySelector('.slider-texto-indicadores');
+
+            indicatorsContainer.innerHTML = ''; // Limpa indicadores anteriores
+
+            // Cria os dots dinamicamente
+            slides.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('dot-texto');
+                dot.onclick = () => mostrarSlide(index);
+                indicatorsContainer.appendChild(dot);
+            });
+
+            const dots = container.querySelectorAll('.dot-texto');
+            let currentIndex = 0;
+
+            function mostrarSlide(index) {
+                slides.forEach(slide => slide.classList.remove('ativo'));
+                dots.forEach(dot => dot.classList.remove('ativo'));
+
+                currentIndex = (index + slides.length) % slides.length;
+
+                slides[currentIndex].classList.add('ativo');
+                dots[currentIndex].classList.add('ativo');
+            }
+
+            // Armazena a função no container para chamadas externas
+            container.mostrarSlideTexto = mostrarSlide;
+            container.getCurrentIndex = () => currentIndex;
+            mostrarSlide(0);
+        }
+
+        // Chamado pelos botões de seta
+        function mudarSlideTexto(button, direcao) {
+            const container = button.closest('.slider-texto-container');
+            const currentIndex = container.getCurrentIndex();
+            container.mostrarSlideTexto(currentIndex + direcao);
+        }
+
+        // Chamado pelos dots (não necessário, mas deixado por compatibilidade)
+        function irParaSlideTexto(dot, index) {
+            const container = dot.closest('.slider-texto-container');
+            container.mostrarSlideTexto(index);
+        }
+
+        // Função para abrir o modal com o vídeo
+        function openVideoModal(element) {
+            var videoModal = document.getElementById('videoModal');
+            var iframe = document.getElementById('videoIframe');
+
+            // Obtém o link do vídeo do atributo 'data-video' do ícone de play clicado
+            var videoLink = element.getAttribute("data-video");
+
+            // Define o src do iframe com o link do vídeo
+            iframe.src = videoLink;
+
+            // Exibe o modal
+            videoModal.style.display = "flex";
+        }
+
+        // Função para fechar o modal
+        function closeVideoModal() {
+            var videoModal = document.getElementById('videoModal');
+            var iframe = document.getElementById('videoIframe');
+
+            // Limpa o vídeo (remove a URL para evitar que o vídeo continue tocando)
+            iframe.src = "";
+            videoModal.style.display = "none";  // Fecha o modal
+        }
+
+        // Impede o fechamento do modal quando o clique for dentro do modal de vídeo
+        document.getElementById('videoModal').addEventListener('click', function (event) {
+            // Apenas fecha o modal se o clique for fora da área de conteúdo (ou seja, na área preta)
+            if (event.target === this) {
+                closeVideoModal();
+            }
+        });
+
+
+    </script>
+</body>
+</html>
